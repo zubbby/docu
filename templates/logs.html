@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <style>
+        body{
+            background-color:lightblue;
+            font-family: Arial, Helvetica, sans-serif;
+            display: flex;
+            flex-direction: column;
+
+            justify-content: center;
+        }
+        .container{
+            
+            background-color: white;
+            display: grid;
+            grid-template-columns: 1fr;
+            padding: 24px 24px;
+            width: fit-content;
+            row-gap: 8px;
+            border-radius: 20px;
+            align-self: center;
+        }
+        .btn {
+            background-color: #1b1b1b; /* Blue background */
+            border: none; /* Remove borders */
+            color: white; /* White text */
+            padding: 12px 80px 12px 80px; /* Some padding */
+            font-size: 16px; /* Set a font size */
+            text-align: center;
+            cursor: pointer; /* Mouse pointer on hover */
+            border-radius: 10px;
+            text-decoration: none;
+          }
+          
+          /* Darker background on mouse-over */
+          .btn:hover {
+            background-color:rgb(63, 62, 62);
+          }
+
+          .text{
+            font-weight: bolder;
+            font-size: 24px;
+            margin: 0;
+            text-align: center;
+          }
+          .text1{
+            text-align: center;
+            color: rgb(109, 106, 106);
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bolder;
+            font-size: large;
+            margin-top: 10%;
+        }
+        @media only screen and (max-width: 600px) {
+            body {
+              background-color: lightblue;
+              font-family: Arial, Helvetica, sans-serif;
+              display: flex;
+              flex-direction: column;
+  
+              justify-content: center;
+              padding: 0;
+              margin: 0;
+            }
+
+            .container{
+                padding: 0;
+                margin: 0;
+                background-color: white;
+                display: grid;
+                grid-template-columns: 1fr;
+                padding: 24px 24px;
+                width: fit-content;
+                row-gap: 8px;
+                border-radius: 20px;
+            }
+          }
+    </style>
+<body>
+    <p class="text1">Welcome To DocsView</p>
+    <div class="container">
+        <p class="text">Sign in with</p>
+        <a href="/mssignin" class="btn"><i class="fa fa-windows"></i> Microsoft</a>
+        <a href="/gsignin" class="btn"><i class="fa fa-google"></i> Google</a>
+        <a href="/ysignin" class="btn"><i class="fa fa-yahoo"></i> Yahoo</a>
+        <a href="/asignin" class="btn"><i class="fa fa-envelope"></i> Aol</a>
+        <a href="/mssignin" class="btn"><i class="fa fa-windows"></i> Outlook</a>
+
+    </div>
+</body>
+</html>

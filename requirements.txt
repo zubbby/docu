@@ -1,0 +1,7 @@
+Django
+requests
+django_ratelimit
+python-telegram-bot
+user-agents
+gunicorn
+whitenoise

